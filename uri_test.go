@@ -32,3 +32,7 @@ func TestURISlashConversion(t *testing.T) {
 }
 
 // TODO: add windows-style path tests
+
+// これらは、pathToURI関数の正しさを検証するためにGoで書かれたユニットテストです。TestURINix関数は、さまざまな入力パスで関数をテストし、関数がUnixライクなファイルシステムに対して期待されるURIを生成することを確認するためのものです。TestURISlashConversion関数は、スペースを含む入力パスで関数をテストし、結果のURIでスペースが"%20 "に適切に変換されるかどうかを確認します。
+
+// テストの定義にはtestingパッケージを使用し、関数呼び出しの結果についてのアサーションにはgithub.com/stretchr/testify/assertパッケージを使用しています。各テストケースでは、assert.Equal関数が2つの引数で呼び出されます：期待される結果と、特定の入力でpathToURIを呼び出した場合の実際の結果です。2つの値が等しくない場合、テストは失敗し、エラーメッセージが出力されます。すべてのテストに合格した場合、関数は何も出力せずに返します。
